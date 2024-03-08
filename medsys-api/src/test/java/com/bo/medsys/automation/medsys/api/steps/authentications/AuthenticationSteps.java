@@ -28,7 +28,7 @@ public class AuthenticationSteps {
         Assertions.assertEquals(statusExpected, statusActual);
     }
 
-    @And("I should receive a response with the following data")
+    @Then("I should receive a response with the following data")
     public void shouldReceiveAResponseWithTheFollowingData(final Map<String, String> data) {
         Assertions.assertAll(
                 () -> Assertions.assertNotNull(userAuthenticated.getToken()),
@@ -36,5 +36,11 @@ public class AuthenticationSteps {
                 () -> Assertions.assertEquals(data.get("fullName"), userAuthenticated.getFullName()),
                 () -> Assertions.assertEquals(data.get("email"), userAuthenticated.getEmail())
         );
+    }
+
+    @Then("I should receive a invalid response with the following message {string}")
+    public void shouldReceiveAResponseWithTheFollowingMessage(String errorMessage) {
+        var message = userAuthenticated.getErrorMessage();
+        Assertions.assertEquals(errorMessage, message);
     }
 }
