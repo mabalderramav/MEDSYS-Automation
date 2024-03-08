@@ -6,7 +6,6 @@ import java.util.Objects;
 
 import static com.bo.medsys.automation.core.ui.config.UiConfigWords.BROWSER;
 import static com.bo.medsys.automation.core.ui.config.UiConfigWords.CHROME_DRIVER_VERSION;
-import static com.bo.medsys.automation.core.ui.config.UiConfigWords.DOWNLOADS;
 import static com.bo.medsys.automation.core.ui.config.UiConfigWords.ENVIRONMENT_NAME;
 import static com.bo.medsys.automation.core.ui.config.UiConfigWords.EXPLICIT_TIME;
 import static com.bo.medsys.automation.core.ui.config.UiConfigWords.HEADLESS_MODE;
@@ -102,15 +101,6 @@ public final class UiConfig {
      */
     public String getChromeDriverVersion() {
         return propertiesFileReader.getPropertyValue(CHROME_DRIVER_VERSION.val());
-    }
-
-    /**
-     * Gets the download folder.
-     *
-     * @return folder path.
-     */
-    public String getDownloadsFolder() {
-        return propertiesFileReader.getPropertyValue(DOWNLOADS.val());
     }
 
     /**

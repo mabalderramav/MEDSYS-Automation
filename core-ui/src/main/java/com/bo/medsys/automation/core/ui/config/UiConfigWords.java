@@ -13,8 +13,7 @@ enum UiConfigWords {
     CHROME_DRIVER_VERSION("chromeDriverVersion"),
     WIDTH("width"),
     HEIGHT("height"),
-    HEADLESS_MODE("headlessMode"),
-    DOWNLOADS("downloads");
+    HEADLESS_MODE("headlessMode");
 
     private final String word;
 
