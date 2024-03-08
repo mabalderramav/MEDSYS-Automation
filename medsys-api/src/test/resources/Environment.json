@@ -1,0 +1,31 @@
+{
+  "Environments": [
+    {
+      "Name": "QA",
+      "Apis": [
+        {
+          "Name": "MEDSYS-QA",
+          "BaseUrl": "",
+          "Versions": [
+            {
+              "Name": "V1",
+              "Version": "1/"
+            }
+          ],
+          "Authentications": [
+            {
+              "Type": "TOKEN",
+              "Users": [
+                {
+                  "Type": "API-TOKEN-AUTO",
+                  "Key": "",
+                  "Token": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
