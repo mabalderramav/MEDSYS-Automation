@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.bo.medsys.automation.medsys.api'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':medsys-core-api')
+    implementation 'io.cucumber:cucumber-java:7.15.0'
+    implementation 'io.cucumber:cucumber-gherkin:7.15.0'
+    implementation 'io.qameta.allure:allure-cucumber7-jvm:2.25.0'
+
+    testImplementation 'org.slf4j:slf4j-simple:2.0.12'
+    testImplementation 'io.cucumber:cucumber-picocontainer:7.15.0'
+    implementation 'io.cucumber:cucumber-testng:7.15.0'
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useTestNG()
+}
+
+tasks.register('executeMedSysApiFeature', Test) {
+    systemProperties(System.getProperties())
+    outputs.upToDateWhen { false }
+    useTestNG()
+    scanForTestClasses = false
+    outputs.upToDateWhen { false }
+    options {
+        useDefaultListeners = false
+        jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-api/src/test/resources/features/"]
+        jvmArgs = ['-Dcucumber.plugin=pretty,' + 'io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm']
+        jvmArgs = ['-Dcucumber.filter.tags=' + System.getProperty('cucumberTags')]
+        testLogging.showStandardStreams = true
+    }
+}
