@@ -26,4 +26,8 @@ public class AuthenticationResponseEntity {
     private String fullName;
 
     private int statusCode;
+
+    @SerializedName("error")
+    @Expose
+    private String errorMessage;
 }

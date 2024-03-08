@@ -28,7 +28,8 @@ public final class AuthenticationHelper {
                                                                                        final Map<String, String> data) {
         var url = EnvironmentManager.getInstance().getUrl().concat(endpoint);
         var username = data.get("email");
-        var password = EnvironmentManager.getInstance().getPassword();
+        var password = data.get("password").equalsIgnoreCase("{password}") ?
+                EnvironmentManager.getInstance().getPassword() : data.get("password");
         var headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         var body = """

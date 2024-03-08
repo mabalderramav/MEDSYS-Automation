@@ -15,3 +15,11 @@ Feature: Authentication
       | id       | {id}                  |
       | fullName | Automation Test       |
       | email    | automation@medsys.com |
+
+  @TestCase36
+  Scenario: User receives an error when submitting invalid credentials
+    When I send a request to POST authentication endpoint "auth" with the following data
+      | email    | automation@medsys.com |
+      | password | fakePassword          |
+    Then I should receive a response with status 401
+    And I should receive a invalid response with the following message "Credenciales inválidas"
