@@ -3,4 +3,5 @@ include 'core-ui'
 include 'core-utils'
 include 'core-api'
 include 'medsys-core-ui'
+include 'medsys-core-api'
 
