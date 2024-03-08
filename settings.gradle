@@ -1,0 +1,5 @@
+rootProject.name = 'MEDSYS-Automation'
+include 'core-ui'
+include 'core-utils'
+include 'core-api'
+
