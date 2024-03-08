@@ -4,21 +4,22 @@
       "Name": "QA",
       "Apis": [
         {
-          "Name": "MEDSYS-QA",
-          "BaseUrl": "",
+          "Name": "MEDSYS",
+          "BaseUrl": "https://medsys-api-demo.azurewebsites.net/",
           "Versions": [
             {
               "Name": "V1",
-              "Version": "1/"
+              "Version": ""
             }
           ],
           "Authentications": [
             {
-              "Type": "TOKEN",
+              "Type": "BASIC",
               "Users": [
                 {
-                  "Type": "API-TOKEN-AUTO",
-                  "Key": "",
+                  "Type": "BASIC-AUTO",
+                  "Username": "automation@medsys.com",
+                  "Password": "",
                   "Token": ""
                 }
               ]
