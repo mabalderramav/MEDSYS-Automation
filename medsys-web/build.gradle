@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.bo.medsys.automation.medsys.api'
+group = 'com.bo.medsys.automation.medsys.web'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -10,12 +10,14 @@ repositories {
 }
 
 dependencies {
-    implementation project(':medsys-core-api')
+    implementation project(":medsys-core-ui")
+    implementation 'org.apache.logging.log4j:log4j-core:2.23.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.23.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
     implementation 'io.cucumber:cucumber-java:7.15.0'
     implementation 'io.cucumber:cucumber-gherkin:7.15.0'
     implementation 'io.qameta.allure:allure-cucumber7-jvm:2.25.0'
 
-    testImplementation 'org.slf4j:slf4j-simple:2.0.12'
     testImplementation 'io.cucumber:cucumber-picocontainer:7.15.0'
     testImplementation 'io.cucumber:cucumber-testng:7.15.0'
     testImplementation platform('org.junit:junit-bom:5.10.2')
@@ -26,23 +28,24 @@ test {
     useTestNG()
 }
 
-tasks.register('executeMedSysApiFeature', Test) {
-    systemProperties(System.getProperties())
+tasks.register('executeMedSysWebFeature', Test) {
+    doFirst {
+        systemProperties(System.getProperties())
+    }
     outputs.upToDateWhen { false }
     useTestNG()
     scanForTestClasses = false
-    outputs.upToDateWhen { false }
     options {
         useDefaultListeners = false
-        jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-api/src/test/resources/features/"]
-        jvmArgs = ['-Dcucumber.plugin=pretty,' + 'io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm' +
-                           "rerun:medsys-api/build/rerun.txt"]
-        jvmArgs = ['-Dcucumber.filter.tags=' + System.getProperty('cucumberTags')]
+        jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-web/src/test/resources/features/"]
+        jvmArgs = ["-Dcucumber.plugin=pretty," + "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm," +
+                           "rerun:medsys-web/build/rerun.txt"]
+        jvmArgs = ["-Dcucumber.filter.tags=" + System.getProperty("cucumberTags")]
         testLogging.showStandardStreams = true
     }
 }
 
-tasks.register("reExecuteMedSysApiFeature", Test) {
+tasks.register("reExecuteMedSysWebFeature", Test) {
     doFirst {
         systemProperties(System.getProperties())
     }
@@ -52,7 +55,7 @@ tasks.register("reExecuteMedSysApiFeature", Test) {
         scanForTestClasses = false
         options {
             useDefaultListeners = false
-            jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-api/src/test/resources/features/"]
+            jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-web/src/test/resources/features/"]
             jvmArgs = ["-Dcucumber.plugin=pretty," + "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm,"]
             jvmArgs = ["-Dcucumber.features=@medsys-web/build/rerun.txt"]
             testLogging.showStandardStreams = true
@@ -61,6 +64,6 @@ tasks.register("reExecuteMedSysApiFeature", Test) {
 }
 
 boolean isReExecutable() {
-    File failedScenariosFile = new File("${rootProject.rootDir}/medsys-api/build/rerun.txt")
+    File failedScenariosFile = new File("${rootProject.rootDir}/medsys-web/build/rerun.txt")
     return failedScenariosFile.exists() && !failedScenariosFile.getText().isEmpty()
 }

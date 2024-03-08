@@ -1,0 +1,21 @@
+{
+  "Environments": [
+    {
+      "Name": "QA",
+      "Portals": [
+        {
+          "Name": "MEDSYS",
+          "LoginUrl": "",
+          "BaseUrl": "",
+          "Users": [
+            {
+              "Type": "MEDSYS-USER-PASSWORD",
+              "Username": "",
+              "Password": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
