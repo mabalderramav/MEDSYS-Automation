@@ -4,7 +4,7 @@ Feature: Authentication
   I want to be able to gets a token
   So that I can log in the application
 
-  @TestCase32
+  @testCase32
   Scenario: User gets a valid token for logging in
     When I send a request to POST authentication endpoint "auth" with the following data
       | email    | automation@medsys.com |
@@ -16,7 +16,7 @@ Feature: Authentication
       | fullName | Automation Test       |
       | email    | automation@medsys.com |
 
-  @TestCase36
+  @testCase36
   Scenario: User receives an error when submitting invalid credentials
     When I send a request to POST authentication endpoint "auth" with the following data
       | email    | automation@medsys.com |
