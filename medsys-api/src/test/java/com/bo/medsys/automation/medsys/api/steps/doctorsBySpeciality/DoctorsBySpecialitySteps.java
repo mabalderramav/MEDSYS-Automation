@@ -1,9 +1,8 @@
 package com.bo.medsys.automation.medsys.api.steps.doctorsBySpeciality;
 
+import com.bo.medsys.automation.medsys.core.api.authentications.entities.AuthenticationResponseEntity;
 import com.bo.medsys.automation.medsys.core.api.doctorsBySpeciality.entities.DoctorsBySpecialityResponseEntity;
 import com.bo.medsys.automation.medsys.core.api.doctorsBySpeciality.helpers.DoctorsBySpecialityHelper;
-import com.bo.medsys.automation.medsys.core.api.authentications.entities.AuthenticationResponseEntity;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;

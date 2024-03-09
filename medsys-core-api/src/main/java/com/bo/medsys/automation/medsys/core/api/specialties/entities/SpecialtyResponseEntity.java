@@ -1,6 +1,5 @@
-package com.bo.medsys.automation.medsys.core.api.doctorsBySpeciality.entities;
+package com.bo.medsys.automation.medsys.core.api.specialties.entities;
 
-import com.bo.medsys.automation.medsys.core.api.doctors.entities.DoctorEntity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
@@ -10,7 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class DoctorsBySpecialityResponseEntity {
+public class SpecialtyResponseEntity {
 
     @SerializedName("error")
     @Expose
@@ -18,7 +17,7 @@ public class DoctorsBySpecialityResponseEntity {
 
     @SerializedName("data")
     @Expose
-    private List<DoctorEntity> doctors;
+    private List<SpecialtyEntity> specialties;
 
     private int statusCode;
 }

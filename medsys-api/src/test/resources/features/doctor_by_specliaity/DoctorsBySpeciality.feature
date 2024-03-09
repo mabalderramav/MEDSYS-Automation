@@ -1,4 +1,4 @@
-@regression @smoke @doctorsBySpeciality
+@regression @doctorsBySpeciality
 Feature: Doctors by Speciality
   As a user
   I want to find doctors by speciality
