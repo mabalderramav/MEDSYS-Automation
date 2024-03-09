@@ -34,4 +34,10 @@ public class DoctorsBySpecialitySteps {
         var doctors = doctorsBySpecialityResponseEntity.getDoctors();
         Assertions.assertFalse(doctors.isEmpty());
     }
+
+    @Then("the response should gets an empty list of doctors by speciality")
+    public void theResponseShouldGetsAnEmptyListOfDoctorsBySpeciality() {
+        var doctors = doctorsBySpecialityResponseEntity.getDoctors();
+        Assertions.assertTrue(doctors.isEmpty());
+    }
 }
