@@ -5,13 +5,13 @@
       "Portals": [
         {
           "Name": "MEDSYS",
-          "LoginUrl": "",
-          "BaseUrl": "",
+          "LoginUrl": "https://happy-sea-0c89d5a10.5.azurestaticapps.net/login/",
+          "BaseUrl": "https://happy-sea-0c89d5a10.5.azurestaticapps.net/",
           "Users": [
             {
-              "Type": "MEDSYS-USER-PASSWORD",
-              "Username": "",
-              "Password": ""
+              "Type": "USER-PASSWORD",
+              "Username": "automation@medsys.com",
+              "Password": "password"
             }
           ]
         }
