@@ -20,7 +20,7 @@ public final class LoginFactory {
     public static LoginPage createLoginPage(PortalWeb portalWeb, UserTypes userType)
             throws IllegalArgumentException {
         if (portalWeb == PortalWeb.MEDSYS) {
-            if (userType == UserTypes.USER_PASSWORD) {
+            if (userType == UserTypes.USER_PASSWORD || userType == UserTypes.USER_PASSWORD_FAKE) {
                 return new LoginUserPasswordPage();
             }
         }

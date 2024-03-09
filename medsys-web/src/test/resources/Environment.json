@@ -12,6 +12,11 @@
               "Type": "USER-PASSWORD",
               "Username": "automation@medsys.com",
               "Password": "password"
+            },
+            {
+              "Type": "USER-PASSWORD-FAKE",
+              "Username": "automation@medsys.com",
+              "Password": "password1234"
             }
           ]
         }
