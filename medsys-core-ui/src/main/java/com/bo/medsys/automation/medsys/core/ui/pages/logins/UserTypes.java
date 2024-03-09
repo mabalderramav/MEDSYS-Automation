@@ -1,7 +1,8 @@
 package com.bo.medsys.automation.medsys.core.ui.pages.logins;
 
 public enum UserTypes {
-    USER_PASSWORD("USER-PASSWORD");
+    USER_PASSWORD("USER-PASSWORD"),
+    USER_PASSWORD_FAKE("USER-PASSWORD-FAKE");
 
     private final String word;
 

@@ -14,6 +14,9 @@ public class LoginUserPasswordPage extends BasePage implements LoginPage {
     @FindBy(css = "button[type='submit']")
     private WebElement loginBtn;
 
+    @FindBy(css = "p[class*='MuiFormHelperText-contained']")
+    private WebElement errorMessageLabel;
+
     /**
      * {@inheritDoc}
      */
@@ -23,5 +26,9 @@ public class LoginUserPasswordPage extends BasePage implements LoginPage {
         action.setValue(userNameTxt, environmentManager.getUsername());
         action.setValue(passwordTxt, environmentManager.getPassword());
         action.click(loginBtn);
+    }
+
+    public String getErrorMessage() {
+        return action.getText(errorMessageLabel);
     }
 }
