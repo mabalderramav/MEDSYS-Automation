@@ -42,6 +42,7 @@ bin/
 .DS_Store
 
 # Custom
+/allure-results/
 /.gradle/
 /.idea/
 /build/

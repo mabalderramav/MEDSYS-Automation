@@ -35,7 +35,7 @@ tasks.register('executeMedSysApiFeature', Test) {
     options {
         useDefaultListeners = false
         jvmArgs = ["-Dcucumber.features=${rootProject.rootDir}/medsys-api/src/test/resources/features/"]
-        jvmArgs = ['-Dcucumber.plugin=pretty,' + 'io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm' +
+        jvmArgs = ['-Dcucumber.plugin=pretty,' + 'io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm,' +
                            "rerun:medsys-api/build/rerun.txt"]
         jvmArgs = ['-Dcucumber.filter.tags=' + System.getProperty('cucumberTags')]
         testLogging.showStandardStreams = true
