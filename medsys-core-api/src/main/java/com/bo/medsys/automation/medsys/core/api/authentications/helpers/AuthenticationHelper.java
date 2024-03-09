@@ -17,6 +17,18 @@ public final class AuthenticationHelper {
     private AuthenticationHelper() {
     }
 
+    /** Send a POST request to the authentication endpoint.
+     *
+     * @param endpoint The endpoint to send the request to.
+     * @return The {@link AuthenticationResponseEntity} object.
+     */
+    public static AuthenticationResponseEntity sendPostRequestToAuthenticationEndpoint(final String endpoint){
+        var data = new HashMap<String, String>();
+        data.put("email", EnvironmentManager.getInstance().getUsername());
+        data.put("password", "{password}");
+        return sendPostRequestToAuthenticationEndpoint(endpoint, data);
+    }
+
     /**
      * Send a POST request to the authentication endpoint.
      *
