@@ -10,6 +10,17 @@ import com.bo.medsys.automation.medsys.core.api.doctorsBySpeciality.entities.Doc
 import java.util.HashMap;
 
 public class DoctorsBySpecialityHelper {
+    private DoctorsBySpecialityHelper() {
+        // Default constructor.
+    }
+
+    /**
+     * Get the doctors by speciality.
+     *
+     * @param endpoint                     The endpoint to send the request to.
+     * @param authenticationResponseEntity The authentication response entity.
+     * @return The doctors by speciality response entity.
+     */
     public static DoctorsBySpecialityResponseEntity getToDoctorsBySpeciality(final String endpoint,
                                                                              final AuthenticationResponseEntity authenticationResponseEntity) {
         var url = EnvironmentManager.getInstance().getUrl().concat(endpoint);

@@ -19,7 +19,7 @@
                 {
                   "Type": "BASIC-AUTO",
                   "Username": "automation@medsys.com",
-                  "Password": "",
+                  "Password": "password",
                   "Token": ""
                 }
               ]
