@@ -16,7 +16,13 @@ public class SchedulerPage extends BasePage {
     @FindBys({
             @FindBy(css = "li[class*='MuiButtonBase-root']"),
     })
-    private List<WebElement> specialtiesDropdownItems;
+    private List<WebElement> dropdownItems;
+
+    @FindBy(css = "button[type='submit']")
+    private WebElement nextButton;
+
+    @FindBy(css = "div[id='stepper-linear-doctor']")
+    private WebElement doctorDropdown;
 
     public SchedulerPage() {
         super();
@@ -28,10 +34,34 @@ public class SchedulerPage extends BasePage {
 
     public List<String> getSpecialties() {
         var specialities = new ArrayList<String>();
-        specialtiesDropdownItems.forEach(specialty -> {
+        dropdownItems.forEach(specialty -> {
             specialities.add(action.getText(specialty));
         });
 
         return specialities;
+    }
+
+    public void selectSpecialty(final String specialty) {
+        dropdownItems.stream()
+                .filter(specialtyItem -> action.getText(specialtyItem).equalsIgnoreCase(specialty))
+                .findFirst()
+                .ifPresent(action::click);
+    }
+
+    public void clickOnNextButton() {
+        action.click(nextButton);
+    }
+
+    public void clickOnDoctorDropdown() {
+        action.click(doctorDropdown);
+    }
+
+    public List<String> getDoctors() {
+        var doctors = new ArrayList<String>();
+        dropdownItems.forEach(doctor -> {
+            doctors.add(action.getText(doctor));
+        });
+
+        return doctors;
     }
 }

@@ -7,6 +7,7 @@ Feature: Doctors and Specialties
   Background:
     Given I login to "MEDSYS" portal web with "USER-PASSWORD" credentials
 
+  @testCase55
   Scenario: Displays a list of specialties
     When I click on 'Especialidad' dropdown
     Then I should see a list of specialties
@@ -15,3 +16,12 @@ Feature: Doctors and Specialties
       | Gastroenterología |
       | Oftalmología      |
       | Pediatría         |
+
+  @testCase56
+  Scenario: Displays a list of doctors in a specialty
+    Given I click on 'Especialidad' dropdown
+    And I select "Cardiología" in dropdownItem
+    And I click on 'Siguiente' button
+    When I click on 'Medico' dropdown
+    Then I should see a list of doctors
+      | Mario Alfredo Martinez Amaral |
