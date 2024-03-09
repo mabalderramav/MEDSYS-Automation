@@ -3,7 +3,6 @@ package com.bo.medsys.automation.medsys.api.steps.specialties;
 import com.bo.medsys.automation.medsys.core.api.authentications.entities.AuthenticationResponseEntity;
 import com.bo.medsys.automation.medsys.core.api.specialties.entities.SpecialtyResponseEntity;
 import com.bo.medsys.automation.medsys.core.api.specialties.helpers.SpecialtyHelper;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
