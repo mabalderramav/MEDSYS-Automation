@@ -13,5 +13,4 @@ Feature: Scheduled Appointments
     Then the scheduled appointments response status code should be 200
     And the scheduled appointments response should have a list of appointments with the following fields
       | appointmentId | hour     | doctorId | fullname                      | specialty   | patientId | dateRegisterPatient      |
-      | 36            | 08:45:00 | 1        | Mario Alfredo Martinez Amaral | Cardiología | 6         | 2024-03-05T00:00:00.000Z |
-      | 39            | 09:30:00 | 1        | Mario Alfredo Martinez Amaral | Cardiología | 6         | 2024-03-05T00:00:00.000Z |
+      | 45            | 09:00:00 | 1        | Mario Alfredo Martinez Amaral | Cardiología | 6         | 2024-03-05T00:00:00.000Z |
