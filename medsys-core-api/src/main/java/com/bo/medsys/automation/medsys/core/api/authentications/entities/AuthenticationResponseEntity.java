@@ -13,7 +13,7 @@ public class AuthenticationResponseEntity {
     @Expose
     private int id;
 
-    @SerializedName("token")
+    @SerializedName("accessToken")
     @Expose
     private String token;
 

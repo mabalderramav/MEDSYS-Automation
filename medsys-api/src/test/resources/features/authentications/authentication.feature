@@ -7,19 +7,19 @@ Feature: Authentication
   @testCase32
   Scenario: User gets a valid token for logging in
     When I send a request to POST authentication endpoint "auth" with the following data
-      | email    | automation@medsys.com |
-      | password | {password}            |
+      | email    | user1@gmail.com |
+      | password | {password}      |
     Then I should receive a response with status 200
     And I should receive a response with the following data
-      | token    | {token}               |
-      | id       | {id}                  |
-      | fullName | Automation Test       |
-      | email    | automation@medsys.com |
+      | token    | {token}         |
+      | id       | {id}            |
+      | fullName | User 1          |
+      | email    | user1@gmail.com |
 
   @testCase36
   Scenario: User receives an error when submitting invalid credentials
     When I send a request to POST authentication endpoint "auth" with the following data
-      | email    | automation@medsys.com |
-      | password | fakePassword          |
+      | email    | user1@gmail.com |
+      | password | fakePassword    |
     Then I should receive a response with status 401
     And I should receive a invalid response with the following message "Credenciales inválidas"
