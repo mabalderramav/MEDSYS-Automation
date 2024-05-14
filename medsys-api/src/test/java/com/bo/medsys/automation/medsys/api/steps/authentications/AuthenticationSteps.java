@@ -45,7 +45,6 @@ public class AuthenticationSteps {
     public void shouldReceiveAResponseWithTheFollowingData(final Map<String, String> data) {
         Assertions.assertAll(
                 () -> Assertions.assertNotNull(authenticationResponse.getToken()),
-                () -> Assertions.assertNotNull(authenticationResponse.getToken()),
                 () -> Assertions.assertEquals(data.get("fullName"), authenticationResponse.getFullName()),
                 () -> Assertions.assertEquals(data.get("email"), authenticationResponse.getEmail())
         );
