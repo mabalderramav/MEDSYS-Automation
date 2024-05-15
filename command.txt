@@ -2,7 +2,7 @@
 gradle executeMedSysApiFeature -DcucumberTags='@regression'
 
 # Command for UI
-gradle executeMedSysUiFeature -DcucumberTags='@regression'
+gradle executeMedSysWebFeature -Dbrowser=CHROME_DOCKER -DcucumberTags='@regression'
 
 # allure command in order to generate reports
 allure generate allure-results --clean -o allure-report
